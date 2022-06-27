@@ -66,5 +66,5 @@ if check_password():
             df_merge = pd.merge(df_start, df_new, on="ID")
             st.subheader("List of Positive Comments with Low Rating")
             st.dataframe(df_merge)
-            df_merge.to_csv("Transformed_data.csv", inplace=False)
+          
             # st.dataframe(df_new)
