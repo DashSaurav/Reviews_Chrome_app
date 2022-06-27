@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd 
 from textblob import TextBlob
+st.set_page_config(page_title="Chrome Review App",page_icon="chart_with_upwards_trend",layout="wide",initial_sidebar_state="expanded",)
 
 st.header("Reviews Sentiment Look Up")
 st.sidebar.warning("Please Provide Password and then upload the **Chrome_reviews.csv** file in Below Space.")
