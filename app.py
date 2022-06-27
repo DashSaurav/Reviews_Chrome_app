@@ -66,5 +66,17 @@ if check_password():
             df_merge = pd.merge(df_start, df_new, on="ID")
             st.subheader("List of Positive Comments with Low Rating")
             st.dataframe(df_merge)
+            def convert_df(df):
+                # IMPORTANT: Cache the conversion to prevent computation on every rerun
+                return df.to_csv().encode('utf-8')
+
+            csv = convert_df(df_merge)
+
+            st.download_button(
+                label="Download data as CSV",
+                data=csv,
+                file_name='Transformed_data.csv',
+                mime='text/csv',
+            )
           
             # st.dataframe(df_new)
